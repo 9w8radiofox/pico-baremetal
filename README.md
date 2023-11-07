@@ -2,10 +2,12 @@
 Documenting my learning to use CMAKE for pi pico
 
 1. Create a build folder and change directory into it
+
    mkdir build
+
    cd build
 
-2. a. For Linux
+3. a. For Linux
 
    cmake ..
    
