@@ -6,7 +6,9 @@ Documenting my learning to use CMAKE for pi pico
    cd build
 
 2. a. For Linux
+
    cmake ..
    
    b. For Windows
+
    cmake -G "MinGW Makefiles" ..
