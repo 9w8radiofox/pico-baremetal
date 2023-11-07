@@ -8,18 +8,36 @@
         "name": "BMP debug",
         "type": "cppdbg",
         "request": "launch",
-        "miDebuggerPath": "arm-none-eabi-gdb",
+        "linux": {
+          "miDebuggerPath": "arm-none-eabi-gdb",
+        },
+        "windows": {
+          "miDebuggerPath": "arm-none-eabi-gdb.exe",
+        },
         "MIMode": "gdb",
         "program": "${workspaceRoot}/build/pico-baremetal.elf",
         "targetArchitecture": "arm",
-        "setupCommands": [
-          {	"text": "set arch armv6-m"},
-          {	"text": "cd ${workspaceRoot}/build"},
-          {	"text": "target extended-remote /dev/ttyACM1"},
-          {	"text": "monitor swd_scan"},
-          {	"text": "file pico-baremetal.elf"}, //arrange before attach to avoid load error
-          {	"text": "attach 1"},
-        ],
+        "linux": {
+          "setupCommands": [
+            {	"text": "set arch armv6-m"},
+            {	"text": "cd ${workspaceRoot}/build"},
+            { "text": "target extended-remote /dev/ttyACM1"},
+            {	"text": "monitor swd_scan"},
+            {	"text": "file pico-baremetal.elf"}, //arrange before attach to avoid load error
+            {	"text": "attach 1"},
+          ],
+        },
+        "windows": {
+          "setupCommands": [
+            {	"text": "set arch armv6-m"},
+            {	"text": "cd ${workspaceRoot}/build"},
+            { "text": "target extended-remote com6"},
+            {	"text": "monitor swd_scan"},
+            {	"text": "file pico-baremetal.elf"}, //arrange before attach to avoid load error
+            {	"text": "attach 1"},
+          ],
+        },
+
         "customLaunchSetupCommands": [
           {	"text": "load"},
           {	"text": "cd ${workspaceRoot}"},
