@@ -8,16 +8,11 @@
         "name": "BMP debug",
         "type": "cppdbg",
         "request": "launch",
-        "linux": {
-          "miDebuggerPath": "arm-none-eabi-gdb",
-        },
-        "windows": {
-          "miDebuggerPath": "arm-none-eabi-gdb.exe",
-        },
         "MIMode": "gdb",
         "program": "${workspaceRoot}/build/pico-baremetal.elf",
         "targetArchitecture": "arm",
         "linux": {
+          "miDebuggerPath": "arm-none-eabi-gdb",
           "setupCommands": [
             {	"text": "set arch armv6-m"},
             {	"text": "cd ${workspaceRoot}/build"},
@@ -28,6 +23,7 @@
           ],
         },
         "windows": {
+          "miDebuggerPath": "arm-none-eabi-gdb.exe",
           "setupCommands": [
             {	"text": "set arch armv6-m"},
             {	"text": "cd ${workspaceRoot}/build"},
