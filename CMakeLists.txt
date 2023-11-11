@@ -10,8 +10,12 @@ set(CMAKE_C_STANDARD 11)
 set(CMAKE_CXX_STANDARD 17)
 pico_sdk_init()
 
-add_executable(${PROJECT_DIR_NAME}
-        src/${PROJECT_DIR_NAME}.c
+file(GLOB_RECURSE SOURCE_FILES "src/*.c")
+file(GLOB_RECURSE HEADER_FILES "include/*.h")
+
+add_executable( ${PROJECT_DIR_NAME}
+                ${SOURCE_FILES}
+                ${HEADER_FILES}
         )
 
 # pull in common dependencies
@@ -19,6 +23,3 @@ target_link_libraries(${PROJECT_DIR_NAME} pico_stdlib)
 
 # create map/bin/hex file etc.
 pico_add_extra_outputs(${PROJECT_DIR_NAME})
-
-# add url via pico_set_program_url
-# example_auto_set_url(blink)

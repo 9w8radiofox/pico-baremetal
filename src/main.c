@@ -4,8 +4,7 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
-#include <stdio.h>
-#include "pico/stdlib.h"
+#include "../include/main.h"
 
 int main() {
 #ifndef PICO_DEFAULT_LED_PIN
