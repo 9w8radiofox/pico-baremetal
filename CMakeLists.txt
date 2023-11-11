@@ -16,10 +16,13 @@ file(GLOB_RECURSE HEADER_FILES "include/*.h")
 add_executable( ${PROJECT_DIR_NAME}
                 ${SOURCE_FILES}
                 ${HEADER_FILES}
+                modules/shell/src/shell.c
         )
 
 # pull in common dependencies
-target_link_libraries(${PROJECT_DIR_NAME} pico_stdlib)
+target_link_libraries(${PROJECT_DIR_NAME} pico_stdlib shell)
 
 # create map/bin/hex file etc.
 pico_add_extra_outputs(${PROJECT_DIR_NAME})
+
+add_subdirectory(modules)

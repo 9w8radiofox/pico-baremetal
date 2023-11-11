@@ -16,7 +16,7 @@
           "setupCommands": [
             {	"text": "set arch armv6-m"},
             {	"text": "cd ${workspaceRoot}/build"},
-            { "text": "target extended-remote /dev/ttyACM1"},
+            { "text": "target extended-remote /dev/ttyACM0"},
             {	"text": "monitor swd_scan"},
             {	"text": "file pico-baremetal.elf"}, //arrange before attach to avoid load error
             {	"text": "attach 1"},
