@@ -72,7 +72,36 @@ struct shell_setup top_setup = {
 	.cmds_num = ARRAY_SIZE(top_cmds),
 };
 
+
+// void uart_gets(char *buffer, size_t size) {
+//     size_t index = 0;
+
+//     while (index < size - 1) {
+//         char c = uart_getc(uart0);
+//         if (c == '\n') {
+//             break;  // Stop on newline
+//         }
+//         buffer[index++] = c;
+//     }
+
+//     buffer[index] = '\0';  // Null-terminate the string
+// }
+
+
 int main() {
+	stdio_init_all();
+
+	// char userInput;
+
+    // while (1) {
+        
+    //     printf("Enter something: ");
+	// 	// scanf("%i", input_buffer); // need to enter ascii number of the character
+	// 	// userInput = getchar(); // input character 
+
+    //     printf("You entered: %s\n", userInput);
+    // }
+
     shell_start(&top_setup);
 // #ifndef PICO_DEFAULT_LED_PIN
 // #warning blink example requires a board with a regular LED
