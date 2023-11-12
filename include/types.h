@@ -51,7 +51,7 @@ typedef unsigned long	ulong;
 	const typeof( ((type *)0)->member ) *__mptr = (ptr);	\
 	(type *)( (char *)__mptr - offsetof(type,member) );})
 
-#define MAX(a,b)			((a) > (b) ? (a) : (b))
-#define MIN(a,b)			((a) < (b) ? (a) : (b))
+// #define MAX(a,b)			((a) > (b) ? (a) : (b)) //already define in pico-sdk\src\rp2_common\pico_platform\include/pico/platform.h:328
+// #define MIN(a,b)			((a) < (b) ? (a) : (b))
 
 #endif /* __COMMON_TYPES_H__ */

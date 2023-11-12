@@ -14,3 +14,7 @@ Documenting my learning to use CMAKE for pi pico
    b. For Windows
 
    cmake -G "MinGW Makefiles" ..
+
+   c. For Eclipse IDE
+   
+   cmake -G "Eclipse CDT4 - Unix Makefiles" -DCMAKE_BUILD_TYPE=Debug .. 
