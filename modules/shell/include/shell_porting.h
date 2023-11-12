@@ -5,7 +5,7 @@
 #include <stdbool.h>
 #include <string.h>
 #include <stdlib.h>
-#include "../../../include/console.h"
+//#include "../../../include/console.h"
 
 #define SHELL_PRINTF      printf
 // #define SHELL_GETS(buf)   gets(buf)
