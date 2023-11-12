@@ -2,6 +2,7 @@
 
 #include "../include/shell_porting.h"
 #include "../include/shell.h"
+#include "../../../include/types.h"
 
 const char *trim(const char *s)
 {

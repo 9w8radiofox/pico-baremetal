@@ -10,6 +10,9 @@ set(CMAKE_C_STANDARD 11)
 set(CMAKE_CXX_STANDARD 17)
 pico_sdk_init()
 
+# Output directory for the build artifacts
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/debug)
+
 file(GLOB_RECURSE SOURCE_FILES "src/*.c")
 file(GLOB_RECURSE HEADER_FILES "include/*.h")
 

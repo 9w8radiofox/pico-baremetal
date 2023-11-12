@@ -9,7 +9,7 @@
         "type": "cppdbg",
         "request": "launch",
         "MIMode": "gdb",
-        "program": "${workspaceRoot}/build/pico-baremetal.elf",
+        "program": "${workspaceRoot}/build/debug/pico-baremetal.elf",
         "targetArchitecture": "arm",
         "linux": {
           "miDebuggerPath": "arm-none-eabi-gdb",
@@ -18,7 +18,7 @@
             {	"text": "cd ${workspaceRoot}/build"},
             { "text": "target extended-remote /dev/ttyACM0"},
             {	"text": "monitor swd_scan"},
-            {	"text": "file pico-baremetal.elf"}, //arrange before attach to avoid load error
+            {	"text": "file debug/pico-baremetal.elf"}, //arrange before attach to avoid load error
             {	"text": "attach 1"},
           ],
         },
@@ -29,7 +29,7 @@
             {	"text": "cd ${workspaceRoot}/build"},
             { "text": "target extended-remote com6"},
             {	"text": "monitor swd_scan"},
-            {	"text": "file pico-baremetal.elf"}, //arrange before attach to avoid load error
+            {	"text": "file debug/pico-baremetal.elf"}, //arrange before attach to avoid load error
             {	"text": "attach 1"},
           ],
         },

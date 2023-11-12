@@ -1,13 +1,21 @@
-# CMakeLists.txt in modules/shell directory
+# modules/shell/CMakeLists.txt
 
-# Add the source files for the shell module
-add_library(shell
-    src/shell.c
-    # Add other source files if any
-)
+# Include Pico SDK import file
+include(${CMAKE_CURRENT_LIST_DIR}/../../pico_sdk_import.cmake)
 
-# Add include directories for the shell module
-target_include_directories(shell PUBLIC include)
+# Add your submodule sources
+file(GLOB_RECURSE SUBMODULE_SOURCES "${CMAKE_CURRENT_LIST_DIR}/src/*.c")
+file(GLOB_RECURSE SUBMODULE_HEADERS "${CMAKE_CURRENT_LIST_DIR}/include/*.h")
 
-# Link the shell module with any dependencies
-# target_link_libraries(shell PRIVATE <dependency_library>)
+# Create a library (you can change STATIC to SHARED if needed)
+add_library(shell STATIC
+            ${SUBMODULE_SOURCES}
+            ${SUBMODULE_HEADERS})
+
+# Include the necessary Pico SDK directories
+target_include_directories(shell PRIVATE ${PICO_SDK_PATH}/src/common/pico_stdio
+                                         # Add other necessary include directories for the submodule
+                                         )
+
+# Link against the Pico SDK libraries
+target_link_libraries(shell PRIVATE pico_stdlib)
