@@ -29,3 +29,9 @@ target_link_libraries(${PROJECT_DIR_NAME} pico_stdlib shell)
 pico_add_extra_outputs(${PROJECT_DIR_NAME})
 
 add_subdirectory(modules)
+
+# Add a custom target for cleaning
+add_custom_target(clean-all
+    COMMAND ${CMAKE_COMMAND} --build ${CMAKE_BINARY_DIR} --target clean
+    COMMENT "Clean everything"
+)

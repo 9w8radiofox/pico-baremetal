@@ -39,6 +39,7 @@
           {	"text": "cd ${workspaceRoot}"},
           {	"text": "set mem inaccessible-by-default off"},
           {	"text": "break main"}
+          // {	"text": "break _entry_point"}
         ],
         "serverLaunchTimeout": 10000,
         "externalConsole": false,
