@@ -6,7 +6,7 @@
 
 #include "../include/main.h"
 #include "../include/types.h"
-#include "../modules/shell/include/shell.h"
+#include "../lib/shell/include/shell.h"
 
 static int func_math_add_a_b(const char *args, struct shell_setup *setup)
 {
