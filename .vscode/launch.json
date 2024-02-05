@@ -27,7 +27,7 @@
           "setupCommands": [
             {	"text": "set arch armv6-m"},
             {	"text": "cd ${workspaceRoot}/build"},
-            { "text": "target extended-remote com6"},
+            { "text": "target extended-remote //./COM10"},
             {	"text": "monitor swd_scan"},
             {	"text": "file debug/pico-baremetal.elf"}, //arrange before attach to avoid load error
             {	"text": "attach 1"},
